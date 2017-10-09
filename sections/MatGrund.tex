@@ -353,11 +353,51 @@ $Arctan2$ mit TR: \texttt{$R \blacktriangleright P \theta (X,Y)$}
 			        r_{21} & r_{22} & r_{23} & o_{ab} \\
 			        0 & 0 & 0 & x                              
 			    \end{bmatrix}$
+                
+       			x = 1 bei Ortsvektor \newline
+                x = 0 bei Feiem Vektor
 		\end{minipage}
-		\begin{minipage}{10cm}
-    			x = 1 bei Ortsvektor \\
-				x = 0 bei Feiem Vektor
-		\end{minipage}
+        \begin{minipage}{0.33\linewidth}
+            \textbf{Translation}\newline
+            $Trans(a,b,c)=\begin{bmatrix}
+            1 & 0 & 0 & a \\ 
+            0 & 1 & 0 & b \\ 
+            0 & 0 & 1 & c \\ 
+            0 & 0 & 0 &  1
+            \end{bmatrix}$
+        \end{minipage}
+\\
+        \begin{minipage}{0.33\linewidth}
+             \textbf{Rotation um Z-Achse mit Winkel $\varTheta$}\newline
+            $ Rot_z(\varTheta)=\begin{bmatrix}
+            cos(\varTheta)& -sin(\varTheta) & 0 & 0 \\ 
+            sin(\varTheta)&  cos(\varTheta)& 0 & 0 \\ 
+            0 & 0 & 1 & 0 \\ 
+            0 & 0 & 0 & 1
+            \end{bmatrix} $
+        \end{minipage} 
+        \begin{minipage}{0.33\linewidth}
+            \textbf{Rotation um X-Achse mit Winkel $ \alpha$}\newline
+            $ Rot_x(\alpha)=\begin{bmatrix}
+            1 & 0 & 0 & 0 \\ 
+            0 & cos(\alpha) & -sin(\alpha) & 0 \\ 
+            0 & sin(\alpha) & cos(\alpha) & 0 \\ 
+            0 & 0 & 0 & 1
+            \end{bmatrix}$
+        \end{minipage}    
+        \begin{minipage}{0.33\linewidth}
+            \textbf{Rotation um Y-Achse mit Winkel $ \beta$}\newline
+            $ Rot_y(\beta)=\begin{bmatrix}
+            cos(\beta)& 0  & sin(\beta)  & 0  \\ 
+             0 & 1 & 0 & 0  \\ 
+            -sin(\beta)&  0 & cos(\beta) & 0 \\ 
+            0 & 0 & 0  & 1
+            \end{bmatrix}$
+        \end{minipage}
+    
+
+
+
 	\subsubsection{Multiplikation}
 		Transformations Matrix über mehrere Koordinatensysteme:\\
 		
