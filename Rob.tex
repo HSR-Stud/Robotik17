@@ -2,15 +2,31 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Robotik - Formelsammlung}
-\newcommand{\authorname}{Silvano Ferretti, Sven Arnold, Arjen Visser}
-\newcommand{\versioninfo}{$Revision: 0 $ - powered by \LaTeX}
+\newcommand{\authorname}{Luca Mazzoleni,Silvano Ferretti, Sven Arnold, Arjen Visser}
 
+%Buch
+%Industrieroboter - Methoden der Steuerung und Regelung
+%3., neu bearbeiete Auflage
+%Wolfgang Weber
+%Isbn: 978-3-446-43355-7
 
 \include{header/header}
 
 
+
 \begin{document} 
+\maketitle
+\setcounter{tocdepth}{2}
+\footnotesize
+\tableofcontents
+\thispagestyle{empty}
+\normalsize
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sections/Roboterkomponenten}
+\clearpage
+\input{sections/Roboterstellung}
+\clearpage
 \input{sections/MatGrund}
 \clearpage
 \input{sections/Kinematik}

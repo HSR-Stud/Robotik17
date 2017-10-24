@@ -17,6 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Wichtige Packages %%
 %%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{amsmath}                % Allgemeine Matheumgebungen									
 \usepackage{amssymb}                % Fonts: msam,msbm, eufm & Mathesymbole, Mengen (lädt automatisch amsfonts)									
 \usepackage{array}                  % \newcolumntype, \firsthline, ,\lasthline, m{width}, b{width}									
@@ -61,7 +62,7 @@
 \newcommand{\subsubadd}[1]{\textcolor{black}{\mbox{#1}}}
 \newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}
 
-\newcommand{\kuchling}[1]{$_{\textcolor{red}{\mbox{\small{Kuchling #1}}}}$}
+\newcommand{\robo}[2]{$_{\textcolor{red}{\mbox{\small{Ind.Roboter S. #1 K. #2}}}}$}
 \newcommand{\stoecker}[1]{$_{\textcolor{grey}{\mbox{\small{Stöcker #1}}}}$}
 \newcommand{\sachs}[1]{$_{\textcolor{blue}{\mbox{\small{Sachs S. #1}}}}$}
 \newcommand{\hartl}[1]{$_{\textcolor{green}{\mbox{\small{Hartl S. #1}}}}$}
@@ -106,6 +107,8 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
 
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt} %kompakte itemize
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt} %kompakte enumerate
 
 %%%%%%%%%%
 % Farben %
@@ -183,7 +186,7 @@
 \renewcommand{\footrulewidth}{0.5pt}
 
 %Kopfzeile links bzw innen
-\fancyhead[L]{\titleinfo{ }\tiny{(\versioninfo)}}
+\fancyhead[L]{\titleinfo{ }}
 %Kopfzeile mitte
 %\fancyhead[C]{}
 %Kopfzeile rechts bzw. aussen
