@@ -135,7 +135,7 @@ Stellen sie die Position Grafisch dar.
 \begin{minipage}{0.5\linewidth}
     \includegraphics[width=\linewidth]{./bilder/RampenprofilInterpol}
 \end{minipage}
-\includegraphics[width=0.3\linewidth]{./bilder/RampenVorgehn}
+\includegraphics[width=0.25\linewidth]{./bilder/RampenVorgehn}
 
 \subsection{Bahnerzeugungn in karteschien Koordinaten}
 \begin{multicols}{2}
@@ -154,3 +154,43 @@ Stellen sie die Position Grafisch dar.
         \item[-] Schwierig, die Motorenbegrenzung zu berücksichtigen.
     \end{itemize}
 \end{multicols}
+
+\begin{minipage}{0.7\linewidth}
+    \subsection{Lineare Interpolation}
+    \vspace{-0.8cm}
+    \[ X_s(t) = X_0 + s(t) \cdot u \]
+    \[ u= \frac{x_f - x_0}{||x_f -x_0||} \]
+    \[ s(t)=a_0 + a_1 t + a_2 t^2 +a_3t^3 \]
+    \[ a_0=0 \quad a_1=0 \quad a_3=\frac{3||x_f-x_0||}{t_f^2} \quad a_3=-\frac{2}{t_f^3}\cdot ||x_f-x_0||  \]
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+    \includegraphics[width=0.9\linewidth]{./bilder/LinInter}
+\end{minipage}
+
+\subsection{Vergleich Bahnverläufe}
+\begin{multicols}{3}
+    \begin{minipage}{\linewidth}
+        \subsubsection{Asynchroner PTP}
+        \includegraphics[width=\linewidth]{./bilder/VBAPTP}
+    \end{minipage}
+
+    \begin{minipage}{\linewidth}
+        \subsubsection{Voll-synchroner PTP}
+        \includegraphics[width=\linewidth]{./bilder/VBVPTP}
+    \end{minipage}
+
+    \begin{minipage}{\linewidth}
+        \subsubsection{CP-Bahn (linear)}
+        \includegraphics[width=\linewidth]{./bilder/VBCPB}
+    \end{minipage}
+\end{multicols}
+
+	\subsection{PTP-Synchron}
+\begin{minipage}{6cm}
+    \includegraphics[width=5cm]{./bilder/synchron.png}
+\end{minipage}
+\begin{minipage}{12.5cm}
+    Asynchron PTP\\ \\ \\ \\ \\ \\
+    Synchron PTP\\ \\ \\ \\ \\ \\
+    Vollsynchron PTP\\
+\end{minipage}
