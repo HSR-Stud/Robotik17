@@ -7,7 +7,7 @@
     \end{minipage}
     \begin{minipage}{0.19\linewidth}  
           
-        \includegraphics[height=3cm]{./bilder/koordtrans2}
+        \includegraphics[height=3cm]{bilder/koordtrans2}
     \end{minipage}
     \begin{minipage}{0.39\linewidth}
         \textbf{Globale kart. Koord.}\newline
@@ -77,7 +77,7 @@
 \begin{minipage}{19cm}
     \textbf{Ablauf:}
     \begin{enumerate}{\setlength{\itemsep}{0cm}\setlength{\parsep}{0cm} \setlength{\topsep}{0cm}}
-        \item Gelenke nummerieren in aufsteigender Reihenfolge. Starten in der Basis mit Nummer null.
+        \item Gelenke nummerieren in aufsteigender Reihenfolge, inkl. Effektor. Starten in der Basis mit Nummer null.
         \item Jeden Achskörper mit Koordinatensystem belegen.
         \item Die $z_i$-Koordinatenachse muss mit der i+1 Gelenkachse zusammenfallen.
         \item Die $x_i$-Achse liegt entlang der Normalen zwischen der $z_{i-1}$ und $z_i$-Achse und zeigt vom Gelenk i zum Gelenk i+1.
@@ -101,7 +101,7 @@
 \begin{minipage}{19cm}
     \textbf{DH-Parameter:}\\ \\
     \begin{tabular}{l l}
-        Linklänge $a_i$ (Fixwert): 				& Für $z_{i-1}$- und $z_i$-Achse wird die gem. Normale mit Länge $a_i$ in $x_i$-Richtung gemessen.\\
+        Linklänge $a_i$ (Fixwert): 				& Für $z_{i-1}$ und $z_i$ Achse wird die gem. Normale mit Länge $a_i$ in $x_i$-Richtung gemessen.\\
         Linkdrehung $\alpha_{i}$ (Fixwert):		& Drehwinkel um $x_i$-Achse bis $z_{i-1}$- und $z_i$-Achse in gleiche Richtung zeigen.\\
         Link Offset $d_i$ (Variable):			& Abstand von $x_{i-1}$- und $x_i$-Achse entlang der $z_{i-1}$-Achse.\\
         Gelenkwinkel $\theta_{i}$ (Variable):	& Drehwinkel um $z_{i-1}$-Achse bis $x_{i-1}$- und $x_i$-Achse in gleiche Richtung zeigen.\\
@@ -120,7 +120,7 @@
             & \textbf{Link Offset $d_i$} 
             & \textbf{Gelenkwinkel $\theta_{i}$}\\
             \hline
-            i
+            i =1
             &&&& \\
             \hline
             i+1
