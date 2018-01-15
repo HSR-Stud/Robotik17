@@ -10,7 +10,7 @@ cache:
     - $HOME/.texlive
 # Change working directory so including files will work
 before_script:
-#- dir
+- dir
 #- pwd
 script:
 # Prefix command with travis_wait x so it times out after 3 mins, because when the LaTeX doesn't compile pdflatex just hangs instead of quitting.
@@ -23,11 +23,10 @@ deploy:
   provider: releases
   api_key:
     secure: $GITHUB_RELEASE_TOKEN
-file:
-  - ./Rob.pdf
-skip_cleanup: true
-on:
+  file:
+    - ./Rob.pdf
+  skip_cleanup: true
+  on:
     tags: true
-    #branches:    
-     # only:      
-      #  - master
+    all_branches: true
+

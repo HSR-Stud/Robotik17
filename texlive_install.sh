@@ -11,9 +11,8 @@
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 tlmgr option repository http://mirrors.standaloneinstaller.com/ctan/systems/texlive/tlnet
 if ! command -v texlua > /dev/null; then
-#sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 
-  # Obtain TeX Live
+# Obtain TeX Live
   wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
   tar -xzf install-tl-unx.tar.gz
   cd install-tl-20*
@@ -49,13 +48,13 @@ tlmgr install collection-fontsrecommended
 # Install babel languages
 #tlmgr install collection-langeuropean
 tlmgr install babel-german
+tlmgr install hyphen-german
 
 #retest
 #tlmgr option repository http://babyname.tips/mirrors/ctan/
 
 #sudo tlmgr option repository  ftp://dante.ctan.org/tex-archive//
-tlmgr install  jknapltx
-tlmgr install  collectbox
+
 
 # Index of packages: http://ctan.mirrors.hoobly.com/systems/texlive/tlnet/archive/
 # Other contrib packages: done as a block to avoid multiple calls to tlmgr
@@ -76,6 +75,7 @@ tlmgr install   \
   caption       \
   centernot     \
   courier       \
+  collectbox    \
   ec            \
   enumerate     \
   enumitem      \
@@ -88,6 +88,7 @@ tlmgr install   \
   fontenc       \
   graphicx      \
   hyperref      \
+  jknapltx      \
   lastpage      \
   imakeidx      \
   inputenc      \
@@ -130,6 +131,7 @@ tlmgr install   \
   wrapfig       \
   xcolor        
 
+#fmtutil --no-strict --byengine=pdftex
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
