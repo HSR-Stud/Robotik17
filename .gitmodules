@@ -1,0 +1,3 @@
+[submodule "Travis"]
+	path = Travis
+	url = https://github.com/lmazzole/Travis
