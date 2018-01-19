@@ -76,7 +76,7 @@
 \end{minipage}
 \clearpage
 
-\begin{minipage}{0.5\linewidth}
+\begin{multicols}{2}
     \subsubsection{Anforderungen}
     \begin{itemize}
         \item Greifkraft
@@ -111,7 +111,7 @@
         \item Wartungsarm
         \item Schmutzunempfindlich    
     \end{itemize}
-\end{minipage}
+\end{multicols}
 \begin{minipage}{0.5\linewidth}
     \subsection{Sauggreifer}
     \begin{itemize}
@@ -129,38 +129,52 @@
         \end{itemize}
         \item Haltekraft
         \begin{itemize}
-            \item $ F_h=A\cdot p_u$
-            \item $ p_u= \frac{m\cdot g}{A \cdot \eta}$
-            \item $F_h$= Haltekraft [N],$A$= Fläche [$cm^2$]
-            \item $p_u$=Unterdruck [$N/cm^2$], $\eta$=dyn. Viscosität [$kg/(m\cdot s)$]
-            \item Haltrekraft mal Sicherheitsfaktor 2
+            \item[] $ F_h=A\cdot p_u$
+            \item[] $ p_u= \frac{m\cdot g}{A \cdot \eta}$
+            \item[] $F_h$= Haltekraft [N],$A$= Fläche [$cm^2$]
+            \item[] $p_u$=Unterdruck [$N/cm^2$], $\eta$=dyn. Viscosität [$kg/(m\cdot s)$]
+            \item[] Haltrekraft mal Sicherheitsfaktor 2
         \end{itemize}
     \end{itemize}
-
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
     \subsection{Mechanische Greifer}
-    \begin{minipage}[t]{0.6\linewidth}
         \begin{itemize}
             \item Einfinger-, Zweifinger- oder Mehrfinger Ausführung
             \item Starr-, Starr-gelenkiger- oder elastischer Ausführung
             \item Antrieb erfolgt mechanisch, pneumatisch oder elektrisch
         \end{itemize}
+    \begin{center}
+        \includegraphics[width=0.3\linewidth]{./bilder/GreiferAusfurung}
+    \end{center}
+    \begin{minipage}{0.49\linewidth}
+        \textbf{Greifkraft beim Abheben}\newline
+        \null\qquad$F_G=\frac{m \cdot (g + a)}{\mu \cdot a} $\newline
+        \textbf{Greifkraft beim Querhub}\newline
+         \null\qquad$F_G=\frac{m \cdot g \dot S}{\mu \cdot n} + m \cdot a $
     \end{minipage}
-    \begin{minipage}[t]{0.39\linewidth}
-        \raisebox{-1\totalheight}{
-        \includegraphics[width=0.9\linewidth]{./bilder/GreiferAusfurung}}
+    \begin{minipage}{0.5\linewidth}
+    $n$: Anz. Greifbacken\newline
+    $\mu$: Reibkoeff. Greifer zu WS\newline
+    $m$: Masse des WS [kg]\newline
+    $a$: Beschleunigung der dyn. Bewegung [$m/s^2$]\newline
+    $S$: Sicherheitsfaktor\newline
+    $g$: Erdbeschleunigung 9.81[$m/s^2$]
     \end{minipage}
 \end{minipage}
+
 \begin{minipage}{0.7\linewidth}
     \subsubsection{Auswahl}
      \includegraphics[width=\linewidth]{./bilder/GreiferAuswahl}
 \end{minipage}
+\clearpage
 
 \subsection{Sensorik}
 \begin{minipage}{0.5\linewidth}
     \subsubsection{Ziele}
    \begin{itemize}
-       \item Abstandserkennung
-       \item Objektkontakt
+       \item Abstandserkennung zwischen Obj. und Greifer
+       \item Objektkontakt am Greifer
        \item Objekt im Greifer?
        \item Objekt korrekt gegriffen?
        \item rutscht das Objet vom Greifer?
@@ -178,5 +192,32 @@
     \end{itemize}
 \end{minipage}
  \includegraphics[width=\linewidth]{./bilder/GreiferZyklus}
+ 
+ \subsubsection{Kamerasysteme}
+ \begin{tabular}{p{5cm}p{6cm}p{6cm}}
+    \textbf{Stationäre Kammera}\newline
+    Transformation vom Kamera-KS ins Basis-KS&
+    \begin{itemize}
+        \item[+] Ist keine Last für den Roboter
+    \end{itemize}
+    &
+        \begin{itemize}
+        \item[-] Messgenauigkeit begrenzt, da die Kamera relativ weit weg vom Objekt ist.
+        \item[-] Roboter evt. im Blickfeld
+        \item[-] Vermessung des Kamerasichtfeldes
+    \end{itemize}\\
+    \textbf{Bewegte Kamera}\newline
+    Transformation vom Kamera-KS ins Werkzeug-KS&
+    \begin{itemize}
+        \item[+] Gute Messgenauigkeit, da nah am Objekt
+        \item[+] Kein grosses Sichtfeld nötig
+        \item[+] Keine Tragkonstrukiton für die Kamerafixierung notwendig.
+    \end{itemize}&
+    \begin{itemize}
+        \item[-] Werkzeug evt. im Bild
+        \item[-] Kamera kann durch Kollision beschödigt werden.
+        \item[-] Kameragewicht am Werkzeug reduziert Traglast.
+    \end{itemize}\\
+ \end{tabular}
 
  \includegraphics[width=0.7\linewidth]{./bilder/GreiferProject}

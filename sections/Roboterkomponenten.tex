@@ -14,7 +14,8 @@
 \begin{minipage}{0.5\linewidth}
 \subsection{Anforderungen}
 \includegraphics[width=\linewidth]{./bilder/anforderung}
-\begin{tabular}{lll}
+{\small 
+\begin{tabular}{lcp{5.3cm}}
 	\textbf{Art}& \textbf{FG}&\textbf{Grund}\\
 	Punktschweissen& 5& Werkzeug rotationssymetrisch\\
 	&(6)&(+1 für Kollisionsvermeidung)\\
@@ -24,15 +25,26 @@
 	Platinen bestücken&4&Platzieren 2, Höhe 1, Orientieren 1\\
 	&&\\
 \end{tabular}
+}
 \end{minipage}
 
 \begin{minipage}{0.5\linewidth}
     \subsection{Komponent}
     \includegraphics[width=\linewidth]{./bilder/komponent}
+    
+    \textbf{Es wird empfohlen die Vorlesung 1 auszudrucken}
 \end{minipage}
-
 \begin{minipage}{0.5\linewidth}
-\textbf{Es wird empfohlen die Vorlesung 1 auszudrucken}
+    \subsection{Freiheitsgrade \robo{43}{2.1.9}}
+    Anzahl der möglichen unabhängigen Bewegungen eines starren Körpers gegenüber einem Bezugskoordinatensystem. Max. nötig 6 (3 Translationen, 3 Rotationen). Ein Roboter kann mehr als 6 FG haben um Kollisionen zu vermeiden. Die Schliessbewegung des Greifers zählt nicht als FG.
+    
+    \subsection{Singularität \robo{58}{3.2.1}}
+    Armstellung, bei der sich der FG der Kinematik reduziert.
+    \subsubsection{Singuläre Konfiguraion}
+    Die Drehung einer Achse kann durch die Gegendrehung einer anderen Achse kompensiert werden.
+    Ein FG geht verloren, da für eine Drehachse zwei Gelenke verwendet werden.
+    \subsubsection{Grenzsingularität}
+    Der Roboter ist ganz ausgrstreckt oder an der Position am rande des Arbeitsbereichs. Er kann sich nicht mehr in alle Richtungen bewegen
 \end{minipage}
 
 \clearpage
@@ -53,15 +65,23 @@
     \item entsteht, wenn ein Armteil auf zwei verschiedenen Wegen mit dem Sockel vebrunden ist.
 \end{itemize}
 \end{minipage}
-	\subsection{Darstellung kinematischer Gelenke}
+	\subsection{Darstellung kinematischer Gelenke \robo{46}{2.2.1}}
 
 \begin{minipage}{10cm}
 	\includegraphics[width=10cm]{./bilder/symbole}
 \end{minipage}
-\begin{minipage}{8cm}
+\begin{minipage}{5.1cm}
 	\includegraphics[width=5cm]{./bilder/symbole-bsp}
 \end{minipage}
-
+\begin{minipage}{0.2\linewidth}
+    \textbf{Weitere Darstellungen:}\newline
+    \robos{46}\newline
+    \robos{47}\newline
+    \robos{51}\newline
+    \robos{52}\newline
+    \robos{54}\newline
+    \robos{60}
+\end{minipage}
 
 
 \begin{minipage}{0.5\linewidth}
@@ -70,6 +90,7 @@
 \begin{minipage}{0.5\linewidth}
 \includegraphics[width=0.8\linewidth]{./bilder/KinAufL}
 \end{minipage}
+
 
 
 

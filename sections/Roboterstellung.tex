@@ -1,18 +1,18 @@
-\section{Mathematische Grundlagen der Robotik}
+\section{Mathematische Grundlagen der Robotik \robo{208}{A}}
 
 \subsection{TI-Nspire CX CAS Befehle}
-Die Bibliothk findet sich im Repo \href{LMazzole/tinspire}{https://github.com/LMazzole/tinspire}\newline
-\begin{tabular}{p{5cm}p{10cm}}
-
-\texttt{$[ x_{11} , x_{12} ; x_{21},x_{22}]$} &  $ \begin{bmatrix}
-            	x_{11} & x_{12}\\
-            	x_{21} & x_{22}\\
-            \end{bmatrix} $ \\
-\texttt{ $[ \ldots]^{-1} $} & Inverse Matrix\\
-\texttt{ $[ \ldots] $ (2ND CATALOG) \small{T} } & Transponierte Matrix
-$[\ldots]^{T}$\\
-
-\end{tabular} \\
+Die Bibliothek findet sich im Repo:  \href{LMazzole/tinspire}{https://github.com/LMazzole/tinspire}\newline
+%\begin{tabular}{p{5cm}p{10cm}}
+%
+%\texttt{$[ x_{11} , x_{12} ; x_{21},x_{22}]$} &  $ \begin{bmatrix}
+%            	x_{11} & x_{12}\\
+%            	x_{21} & x_{22}\\
+%            \end{bmatrix} $ \\
+%\texttt{ $[ \ldots]^{-1} $} & Inverse Matrix\\
+%\texttt{ $[ \ldots] $ (2ND CATALOG) \small{T} } & Transponierte Matrix
+%$[\ldots]^{T}$\\
+%
+%\end{tabular} \\
 	
 %
 %	\subsection{Matritzenrechnen}
@@ -46,6 +46,33 @@ $[\ldots]^{T}$\\
 %			        \end{bmatrix}$		    
 %    \end{tabular}
 %
+\begin{minipage}[t]{0.33\linewidth}
+     \subsubsection{Distanz eines Vektors}
+    Distanz$\begin{bmatrix}
+    x\\
+    y\\
+    z\\
+    1
+    \end{bmatrix}\rightarrow$ |d|=$\underbrace{\sqrt{x^2+y^2+z^2}}_{\texttt{Betrag des Vektors}}$
+\end{minipage}
+\begin{minipage}[t]{0.33\linewidth}
+    \subsubsection{Richtungsvektor \robos{31}}
+    \[ e_u=\frac{\vec{u}}{|\vec{u}|} =
+    \begin{bmatrix}
+    \frac{u_x}{|u|}\\
+    \frac{u_y}{|u|}\\
+    \frac{u_z}{|u|}\\
+    \end{bmatrix}\]  
+\end{minipage}
+\begin{minipage}[t]{0.33\linewidth}
+    \subsubsection{Skalarprodukt \robos{32}}
+    \[ \vec{a}\cdot \vec{b}= |\vec{a}|\cdot |\vec{b}| \cdot \cos(\varphi) = a_x \cdot b_x +  a_y \cdot b_y +  a_z \cdot b_z\]
+    Parallel: $\vec{a}\cdot \vec{b} = a\cdot b$ \newline
+    Orthogonal: $\vec{a}\cdot \vec{b} = 0$
+\end{minipage}
+
+
+
 \subsection{Determinante}
 \begin{minipage}{9cm}
     
@@ -186,7 +213,7 @@ Existiert nur wenn Matrix regulär: $\det A \neq 0$\newline
 % 		\item $A^n = T D^n T^{-1}$
 % 
 %      \end{enumerate}
-\subsection{Basis Rotationsmatrizen}
+\subsection{Basis Rotationsmatrizen \robo{35}{2.1.6}}
 Der Winkel ist Positiv bei einer Rotation im Gegenuhrzeigersinn $ \circlearrowleft $\newline
 	\begin{minipage}{0.33\linewidth}
 		Rotation um x-Achse mit Winkel $\gamma$ \\
@@ -213,7 +240,8 @@ Der Winkel ist Positiv bei einer Rotation im Gegenuhrzeigersinn $ \circlearrowle
                 	 \end{bmatrix}$
     \end{minipage}
 \subsection{Aufeinanderfolgende Rotationen}
-3 Koordinatensysteme \{A\}, \{B\}, \{C\} mit gleichem Ursprung\\ \\
+3 Koordinatensysteme \{A\}, \{B\}, \{C\} mit gleichem Ursprung\\
+${}^k_o\mathrm{A}$ beschreibt wie der Basisvektor des Koord. Sys. $K_k$ gegenüber $K_o$ gedreht wird.\newline
 \begin{minipage}{6cm}
     \textbf{Körperfestkoordinatensystem}\\
     "`An der Achse"'\\
@@ -495,10 +523,3 @@ $\beta=-\frac{\pi}{2}$:
  ${}^B\mathrm{P}={}^B_A\mathrm{T}\cdot{}^A\mathrm{P}$ \\ \\
  ${}^A\mathrm{P}={}^A_B\mathrm{T}\cdot{}^B\mathrm{P}=({}^B_A\mathrm{T})^{-1}\cdot{}^B\mathrm{P}$
  
- \subsubsection{Distanz eines Vektors}
- Distanz$\begin{bmatrix}
- x\\
- y\\
- z\\
- 1
- \end{bmatrix}\rightarrow$d=$\sqrt{x^2+y^2+z^2}$

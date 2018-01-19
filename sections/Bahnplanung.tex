@@ -1,5 +1,5 @@
-\section{Bahnplanung}
-\subsection{Bewegungsarten}
+\section{Bahnplanung \robo{71}{4}}
+\subsection{Bewegungsarten \robo{71}{4.1}}
 \begin{minipage}{0.5\linewidth}
     \includegraphics[width=0.9\linewidth]{./bilder/bewegungsarten}
 \end{minipage}
@@ -16,12 +16,12 @@
         \begin{itemize}
             \item  Jede Achse verfährt vollständig unabhängig von anderen Achsen.
         \end{itemize}
-        \item  \textbf{synchronen PTP}
+        \item  \textbf{synchronen PTP \robo{81}{4.2.5}}
         \begin{itemize}
             \item  Wird durch die Achse mit der grössten Bahndauer bestimmt.
             \item Die Geschwindigkeit der anderen Achsen wird reduziert,so dass alle gleichzeitig ihren Endpunkt erreichen.
         \end{itemize}
-        \item  \textbf{vollsynchronen PTP}
+        \item  \textbf{vollsynchronen PTP \robo{82}{4.2.6}}
         \begin{itemize}
             \item  Nicht nur die Bahnzeiten für die Gelenke synchronisiert.
             \item Auch Beschleunigungs und Brmezeiten synchron.
@@ -48,7 +48,7 @@
     \end{itemize}
 \end{minipage}
 
-\subsection{Bahnüberschleifen}
+\subsection{Bahnüberschleifen \robo{96}{4.4}}
 Vorteile:
 \begin{itemize}
     \item[+] Zeitgewinn
@@ -82,7 +82,7 @@ Vorteile:
     \end{itemize}
 \end{multicols}
 \clearpage
-\subsubsection{Kubisches Polynome}
+\subsubsection{Kubisches Polynom}
 \begin{tabular}{ll}
 \multicolumn{2}{l}{\textbf{Bedingungen}}\\
 $ \theta(0)=\theta_0 $& $ \theta(t_f) = \theta_f$\\ 
@@ -112,10 +112,42 @@ Stellen sie die Position Grafisch dar.
 \end{tabular}
 
 \clearpage
-\subsubsection{Rampenprofil}
+\subsubsection{Rampenprofil \robo{75}{4.2.2}}
+\begin{minipage}{0.4\linewidth}
+    \begin{align*}
+        s_e &= |q_Z - q_{St}|\\
+        t_b &= \frac{v_m}{b_m}\\
+        t_e &= \frac{s_e}{v_m}+t_b\\
+        t_v &= t_e - t_b = \frac{s_e}{v_m}
+    \end{align*}
+        \begin{tabular}{ll}
+        $q_Z$ & Zielkoordinaten\\
+        $q_{St}$& Startkoordinaten\\
+        $t_b$ & Beschleunigungszeit\\
+        $t_v$ & Bremszeit \\
+        $t_e$ & Dauer der Bewegung\\
+        $v_m$ & Bahngeschwindigkeit\\
+        $b_m$ & Bahnbeschleunigung\\
+        $s_e$ & Länge der Bahn\\
+    \end{tabular}
+\end{minipage}
+\begin{minipage}{0.25\linewidth}
+    \includegraphics[width=\linewidth]{./bilder/RampenTrapez}
+\end{minipage}
+\begin{minipage}{0.35\linewidth}
+    \textbf{Ablauf Korrektur\newline zeit-optimaler Bahn}\newline
+    \includegraphics[width=\linewidth]{./bilder/RampenVorgehn}
+\end{minipage}
+    \begin{align*}
+0 \le   &t \le t_b   &  \ddot{s}(t) &= b_m        & \dot{s}&=b_m \cdot t               &  s(t)&=\frac{1}{2}\cdot b_m \cdot t^2\\ 
+t_b \le &t \le t_v   &  \ddot{s}(t) &= 0          &  \dot{s}&=v_m \cdot t              &  s(t)&=v_m \cdot t - \frac{1}{2}\cdot \frac{v_m^2}{b_m}\\
+t_v \le &t \le t_e   &  \ddot{s}(t) &= -b_m       &  \dot{s}&=v_m -b_m \cdot (t-t_v)   &  s(t)&=v_m \cdot t_v - \frac{b_m}{2}\cdot(t_e - t)^2\\       
+&            &              &             &  \dot{s}&=b_m \cdot (t_e-t)                &      &
+\end{align*}
 \begin{minipage}{0.5\linewidth}
+    \textbf{BSP:}\newline
     {\small 
-    $\ddot{\theta}$ gegeben\newline
+    Die Beschleunigung der Übergangsphase $\ddot{\theta}$ ist gegeben\newline
     \begin{align*}
         \ddot{\theta}\cdot t_b &= \frac{\theta_h-\theta_b}{t_h - t_b}\\
         \theta_b &=\theta_0 + \frac{1}{2}\ddot{\theta}\cdot t_b^2\\
@@ -134,60 +166,47 @@ Stellen sie die Position Grafisch dar.
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
     \includegraphics[width=0.9\linewidth]{./bilder/RampenprofilInterpol}
-    \includegraphics[width=0.5\linewidth]{./bilder/RampenVorgehn}
 \end{minipage}
-
-
-\subsection{Bahnerzeugungn in karteschien Koordinaten}
-\begin{multicols}{2}
-    \begin{itemize}
-        \item[+] Bahn genau definiert
-    \end{itemize}
-    
-    \begin{itemize}
-        \item[-] Berechnung der inv. Koordtrans für jeden Punkt notwendig.
-        \item[-] Geometrische Probleme
-        \begin{itemize}
-            \item Unerreichbare Zwischenpunkte
-            \item Hohe v in der näche von Singularitäten
-            \item Start/Ziel gehören zu verschiedenen Zweige der kin. Lösung
-        \end{itemize}
-        \item[-] Schwierig, die Motorenbegrenzung zu berücksichtigen.
-    \end{itemize}
-\end{multicols}
-
-\begin{minipage}{0.7\linewidth}
-    \subsection{Lineare Interpolation}
-    \vspace{-0.8cm}
-    \[ X_s(t) = X_0 + s(t) \cdot u \]
-    \[ u= \frac{x_f - x_0}{||x_f -x_0||} \]
-    \[ s(t)=a_0 + a_1 t + a_2 t^2 +a_3t^3 \]
-    \[ a_0=0 \quad a_1=0 \quad a_2=\frac{3||x_f-x_0||}{t_f^2} \quad a_3=-\frac{2}{t_f^3}\cdot ||x_f-x_0||  \]
-\end{minipage}
-\begin{minipage}{0.3\linewidth}
-    \includegraphics[width=0.9\linewidth]{./bilder/LinInter}
-\end{minipage}
-
 \clearpage
-\subsection{Vergleich Bahnverläufe}
+\subsubsection{Bahn mit Zwischenpunkten}
+\begin{minipage}{0.5\linewidth}
+    \begin{align*}
+    \dot{\theta}_{jk} &= \frac{\theta_k - \theta_j}{t_{djk}}\\
+    \ddot{\theta}_{jk} &= SGN(\dot{\theta}_{kl}-\dot{\theta}_{jk})|\ddot{\theta}_k|\\
+    t_k &= \frac{\dot{\theta}_{kl}- \dot{\theta}_{jk}}{\ddot{\theta}_k}\\
+    t_{jk}&=t_{djk}-\frac{1}{2}t_j - \frac{1}{2}t_k\\
+    \end{align*}
+    Allgemein:
+    \begin{align*}
+    \dot{\theta}_{(n-1)n} &= \frac{\theta_n - \theta_{n-1}}{t_{d(n-1)n}-\frac{1}{2}t_n}\\
+    \ddot{\theta}_n &= SGN(\dot{\theta}_{n-1}-\dot{\theta}_{n})|\ddot{\theta}_n|\\
+    t_n &= t_{d(n-1)n}-\sqrt{t^2_{d(n-1)n}+\frac{2(\theta_n - \theta_{n-1})}{\ddot{\theta}_n}}\\
+    t_{(n-1)n} &= t_{d(n-1)n}-t_n - \frac{1}{2}t_{n-1}\\
+    \end{align*}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+    \includegraphics[width=0.9\linewidth]{./bilder/BahnMitZP}
+\end{minipage}
+\clearpage
+\subsection{Vergleich Bahnverläufe \robo{83}{4.2.7}}
 \begin{multicols}{3}
     \begin{minipage}{\linewidth}
         \subsubsection{Asynchroner PTP}
         \includegraphics[width=\linewidth]{./bilder/VBAPTP}
     \end{minipage}
-
+    
     \begin{minipage}{\linewidth}
         \subsubsection{Voll-synchroner PTP}
         \includegraphics[width=\linewidth]{./bilder/VBVPTP}
     \end{minipage}
-
+    
     \begin{minipage}{\linewidth}
         \subsubsection{CP-Bahn (linear)}
         \includegraphics[width=\linewidth]{./bilder/VBCPB}
     \end{minipage}
 \end{multicols}
 
-	\subsection{PTP-Synchron}
+\subsection{PTP-Synchron}
 \begin{minipage}{6cm}
     \includegraphics[width=5cm]{./bilder/synchron}
 \end{minipage}
@@ -196,3 +215,57 @@ Stellen sie die Position Grafisch dar.
     Synchron PTP\\ \\ \\ \\ \\ \\
     Vollsynchron PTP\\
 \end{minipage}
+\newline
+\textbf{TODO SYNCHRONISATION \robo{81}{4.2.5}}
+\clearpage
+\subsection{Bahnerzeugungn in karteschien Koordinaten / Bahnsteuerung \robo{85}{4.3}}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item[+] Bahn genau definiert
+    \end{itemize}
+    
+    \begin{itemize}
+        \item[-] Berechnung der inv. Koordtrans für jeden Punkt notwendig.
+        \item[-] Schwierig, die Motorenbegrenzung zu berücksichtigen.
+        \columnbreak
+        \item[-] Geometrische Probleme
+        \begin{itemize}
+            \item Unerreichbare Zwischenpunkte
+            \item Hohe v in der Nähe von Singularitäten
+            \item Start/Ziel gehören zu verschiedenen Zweige der kin. Lösung
+        \end{itemize}
+    \end{itemize}
+\end{multicols}
+
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+    \item Der TCP bewegt sich auf einer Geraden zur Zielposition
+    \begin{itemize}
+        \item Interpolation für TCP im Raum
+    \end{itemize}
+\item Die Orientierung kann ändern
+\begin{itemize}
+    \item Interpolation für Euler-Winkel
+\end{itemize}
+\item Unterscheidung einer synchronen und asynchronen Bahn ist nicht notwendig da normalerweise alle Gelenke an der Bewegung beteiligt sind.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./bilder/Bahnsteuerung}
+\end{minipage}
+
+\begin{minipage}{0.7\linewidth}
+    \subsubsection{Lineare Interpolation \robo{86}{4.3.2}}
+    \vspace{-0.8cm}
+    \[ X_s(t) = X_0 + s(t) \cdot u \]
+    \[ u= \frac{x_f - x_0}{||x_f -x_0||} \]
+    \[ s(t)=a_0 + a_1 t + a_2 t^2 +a_3t^3 \]
+    \[ a_0=0 \quad a_1=0 \quad a_2=\frac{3\cdot ||x_f-x_0||}{t_f^2} \quad a_3=-\frac{2}{t_f^3}\cdot ||x_f-x_0||  \]
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+    \includegraphics[width=0.9\linewidth]{./bilder/LinInter}
+\end{minipage}
+
+\subsubsection{Zirkulare Interpolation \robo{88}{4.3.3}}
+\clearpage
+
