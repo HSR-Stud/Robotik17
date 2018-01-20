@@ -10,25 +10,8 @@
 \begin{minipage}{0.5\linewidth}
     \includegraphics[width=\linewidth]{./bilder/bewegungsarten2}
 \end{minipage}
-\begin{minipage}{0.5\linewidth}
-    \begin{itemize}
-        \item  \textbf{asynchronen PTP}
-        \begin{itemize}
-            \item  Jede Achse verfährt vollständig unabhängig von anderen Achsen.
-        \end{itemize}
-        \item  \textbf{synchronen PTP \robo{81}{4.2.5}}
-        \begin{itemize}
-            \item  Wird durch die Achse mit der grössten Bahndauer bestimmt.
-            \item Die Geschwindigkeit der anderen Achsen wird reduziert,so dass alle gleichzeitig ihren Endpunkt erreichen.
-        \end{itemize}
-        \item  \textbf{vollsynchronen PTP \robo{82}{4.2.6}}
-        \begin{itemize}
-            \item  Nicht nur die Bahnzeiten für die Gelenke synchronisiert.
-            \item Auch Beschleunigungs und Brmezeiten synchron.
-        \end{itemize}
-    \end{itemize}
-\end{minipage}
-\vspace{-1cm}
+
+
 \subsubsection{Singularität}
 \begin{minipage}{0.5\linewidth}
     \textbf{Singuläre Konfiguration}
@@ -57,11 +40,11 @@ Vorteile:
 \end{itemize}
 
 \begin{minipage}{0.345\linewidth}
-    \textbf{PTP}\newline
+    \textbf{PTP} \robo{97}{4.4.1}\newline
     \includegraphics[width=\linewidth]{./bilder/UeberschleifenPTP}
 \end{minipage}
 \begin{minipage}{0.32\linewidth}
-    \textbf{Linear}\newline
+    \textbf{Linear}\robo{98}{4.4.2}\newline
     \includegraphics[width=\linewidth]{./bilder/UeberschleifenLin}
 \end{minipage}
 \begin{minipage}{0.32\linewidth}
@@ -124,7 +107,7 @@ Stellen sie die Position Grafisch dar.
         $q_Z$ & Zielkoordinaten\\
         $q_{St}$& Startkoordinaten\\
         $t_b$ & Beschleunigungszeit\\
-        $t_v$ & Bremszeit \\
+        $t_v$ & Bremszeitpunkt \\
         $t_e$ & Dauer der Bewegung\\
         $v_m$ & Bahngeschwindigkeit\\
         $b_m$ & Bahnbeschleunigung\\
@@ -188,6 +171,57 @@ t_v \le &t \le t_e   &  \ddot{s}(t) &= -b_m       &  \dot{s}&=v_m -b_m \cdot (t-
     \includegraphics[width=0.9\linewidth]{./bilder/BahnMitZP}
 \end{minipage}
 \clearpage
+\subsection{Interpolationsschrittweite \robo{79}{4.2.4}}
+\subsection{PTP-Synchronisierung}
+\begin{minipage}{0.7\linewidth}
+    \begin{itemize}
+        \item  \textbf{asynchronen PTP}
+        \begin{itemize}
+            \item  Jede Achse verfährt vollständig unabhängig von anderen Achsen.
+        \end{itemize}
+    \item[]
+        \item  \textbf{synchronen PTP \robo{81}{4.2.5}}
+        \begin{itemize}
+            \item  Wird durch die Achse mit der grössten Bahndauer bestimmt.
+            \item Die Geschwindigkeit der anderen Achsen wird reduziert,so dass alle gleichzeitig ihren Endpunkt erreichen.
+        \end{itemize}
+    \item[]
+        \item  \textbf{vollsynchronen PTP \robo{82}{4.2.6}}
+        \begin{itemize}
+            \item  Nicht nur die Bahnzeiten für die Gelenke synchronisiert.
+            \item Auch Beschleunigungs und Bremezeiten synchron.
+        \end{itemize}
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{6cm}
+    \includegraphics[width=5cm]{./bilder/synchron}
+\end{minipage}
+\newline
+\subsubsection{synchrone PTP \robo{81}{4.2.5}}
+\textbf{Vorgehen:}\newline \vspace{-\baselineskip}
+\begin{itemize}
+    \item Wie bei der asynchronen PTP zuerst $s_{e,i}$, $ v_{m,i}$, $b_{m,i}$ und $t_{e,i}$ bestimmen. (Bsp. mit Rampenprofil)
+    \item Maximale Fahrzeit ermitteln: $t_e=max(t_{e,i})$.
+    \begin{itemize}
+        \item Achse mit der max. Fahrzeit ist die \textbf{Leitachse}
+    \end{itemize} 
+    \item Für alle Gelenke gilt: $t_{e,i}=t_e$
+    \item Geschwindigkeit der Gelenke $v_{m,i}$, welche nicht die Leitgelenke sind werden angepasst
+\end{itemize}
+\[ t_e=\frac{s_{e,i}}{v_{m,i}}+\frac{v_{m,i}}{b_{m,i}}  \quad \rightarrow \quad 
+ v_{m,i}=\frac{b_{m,i}\cdot t_e}{2}- \sqrt{\frac{b_{m,i}^2\cdot t_e^2}{4}-s_{e,i}\cdot b_{m,i}} \]
+Wegen $t_e \ge 2\cdot t_{b,i}$ ist nur der kleiner Wert sinnvoll.
+\subsubsection{vollsynchrone PTP \robo{82}{4.2.6}}
+\textbf{Vorgehen:}\newline \vspace{-\baselineskip}
+\begin{itemize}
+    \item Wie bei synchron PTP \textbf{Leitachse} bestimmen.
+    \begin{itemize}
+        \item Gibt $t_e$, $t_b$ und $t_v=t_e-t_b $ vor.
+    \end{itemize}
+    \item Geschwindigkeit und Beschleunigung der Gelenke $v_{m,i}$, welche nicht die Leitgelenke sind werden angepasst
+\end{itemize}    
+\[ v_{m,i}= \frac{s_{e,i}}{t_v} \qquad b_{m,i}=\frac{v_{m,i}}{t_b} \]
+
 \subsection{Vergleich Bahnverläufe \robo{83}{4.2.7}}
 \begin{multicols}{3}
     \begin{minipage}{\linewidth}
@@ -205,19 +239,7 @@ t_v \le &t \le t_e   &  \ddot{s}(t) &= -b_m       &  \dot{s}&=v_m -b_m \cdot (t-
         \includegraphics[width=\linewidth]{./bilder/VBCPB}
     \end{minipage}
 \end{multicols}
-
-\subsection{PTP-Synchron}
-\begin{minipage}{6cm}
-    \includegraphics[width=5cm]{./bilder/synchron}
-\end{minipage}
-\begin{minipage}{12.5cm}
-    Asynchron PTP\\ \\ \\ \\ \\ \\
-    Synchron PTP\\ \\ \\ \\ \\ \\
-    Vollsynchron PTP\\
-\end{minipage}
-\newline
-\textbf{TODO SYNCHRONISATION \robo{81}{4.2.5}}
-\clearpage
+\clearpage  %========================================================================
 \subsection{Bahnerzeugungn in karteschien Koordinaten / Bahnsteuerung \robo{85}{4.3}}
 \begin{multicols}{2}
     \begin{itemize}
@@ -258,7 +280,7 @@ t_v \le &t \le t_e   &  \ddot{s}(t) &= -b_m       &  \dot{s}&=v_m -b_m \cdot (t-
     \subsubsection{Lineare Interpolation \robo{86}{4.3.2}}
     \vspace{-0.8cm}
     \[ X_s(t) = X_0 + s(t) \cdot u \]
-    \[ u= \frac{x_f - x_0}{||x_f -x_0||} \]
+    \[ u= \frac{x_f - x_0}{||x_f -x_0||} \rightarrow \text{Richtungsvektor}\]
     \[ s(t)=a_0 + a_1 t + a_2 t^2 +a_3t^3 \]
     \[ a_0=0 \quad a_1=0 \quad a_2=\frac{3\cdot ||x_f-x_0||}{t_f^2} \quad a_3=-\frac{2}{t_f^3}\cdot ||x_f-x_0||  \]
 \end{minipage}
