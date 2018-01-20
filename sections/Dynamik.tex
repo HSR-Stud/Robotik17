@@ -1,11 +1,10 @@
 \section{Dynamik \robo{124}{6}}
-\begin{minipage}{\linewidth} 
-    \centering
-%    \vspace{-2cm}
+\vspace{-0.5cm}
+\begin{center} 
      \[ \texttt{Gelenkekräfte/Momente } Q
      \mathrel{\mathop{\rightleftarrows}^{\mathrm{Direkte Dynamik}}_{\mathrm{Inverse Dynamik}}}
       \texttt{Bewegung des Arbeitsgliedes } \ddot{q},\; \dot{q},\; q\]   
-\end{minipage}
+\end{center}
 
 \begin{minipage}{\linewidth}
     \small 
@@ -25,15 +24,20 @@
         \includegraphics[width=0.8\linewidth]{./bilder/DynDrehgelenk}
     \end{minipage}
 \end{minipage}
-\begin{tabular}{p{4.5cm}lp{8.5cm}}
+\begin{tabular}{p{4cm}p{6cm}p{7.5cm}}
     \textbf{Dynamische Gleichung} \newline Roboter mit n Achsen&
-    $Q = M(q)\cdot \ddot{q} + V(q,\dot{q})+ G(q)  $ &
+    $Q = M(q)\cdot \ddot{q} + V(q,\dot{q})+ G(q)  $ \newline
+    $\tau \;= M(q) \cdot \ddot{q} + b(q,\dot{q}) \;+ z $&
     \small{
         Q: verallgemeinerte Kräfte (n\texttimes 1)\newline
         M: konfigurationsabhängige Massenmatrix (n\texttimes n)\newline
         V: Vektor nichtlinearer Term, der durch die Zentripetal- und die Coriolis-Beschleunigung entsteht (n\texttimes 1)\newline
         G: Vektor, der die Gravitationsterme enthält (n \texttimes 1)
     }\\
+    \textbf{Bewegungsgelichung}\newline
+    \robo{144}{6.2.6}&
+    $\ddot{q}=M^{-1}(q)[\tau -b(q,\dot{q})]$&
+    \\
 \end{tabular}
 
 \subsection{Dynamik nach Lagrange}
@@ -93,7 +97,7 @@
 
 
 \begin{minipage}{0.75\linewidth}
-    \subsubsection{Bewegungsgleichung}
+    \subsubsection{Bewegungsgleichung \robo{144}{6.2.6}}
     \vspace{-0.5cm}
     \[\hspace{-0.5cm}\begin{pmatrix}
         \tau_1\\
