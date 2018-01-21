@@ -1,7 +1,49 @@
 \section{Mathematische Grundlagen der Robotik \robo{208}{A}}
-
 \subsection{TI-Nspire CX CAS Befehle}
-Die Bibliothek findet sich im Repo:  \href{LMazzole/tinspire}{https://github.com/LMazzole/tinspire}\newline
+\begin{minipage}{0.4\linewidth}
+%    \vspace{-6cm}
+\begin{tabular}{ll}
+    \textbf{Anwendung} & \textbf{Befehl}\\ \hline
+    Distanz eins Vektors & norm($\vec{a}$)\\
+    Richtungsvektor & unitV($\vec{a}$)\\
+    Skalarprodukt & dotP($\vec{a}$,$\vec{b}$)\\
+    Determinante & det([mat])\\
+    Inverse Mat. & [mat]${}^{-1}$\\
+    Transponiert Mat. & [mat]${}^{\small \textbf{T}}$\\
+    mat:=[11,12;21,22] & mat[1,1] = 11\\
+\end{tabular}
+    \includegraphics[width=0.7\linewidth]{./bilder/koordsys}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+    \vspace{-1cm}
+    Die Bibliothek findet sich im Repo:\newline \href{LMazzole/tinspire}{https://github.com/LMazzole/tinspire}
+    
+    \hrulefill
+    
+    \textbf{Arctan2()} \hfill \textit{lm$\backslash$arctan2(y,x)} \hspace{4.5cm}
+    
+    \hrulefill
+    
+    \textbf{DH-Mat}\hfill 
+    \textit{lm$\backslash$dhmat(a,$\alpha$,d,$\theta$)} \hspace{4cm}
+    \begin{multicols}{2}
+        a $\rightarrow$ Linklänge \newline
+        $\alpha$ $\rightarrow$ Linkdrehung\newline
+        d $\rightarrow$ Link Offset\newline
+        $\theta$ $\rightarrow$ Gelenkwinkel
+    \end{multicols}
+    \begin{center}
+        \includegraphics[width=0.7\linewidth]{./bilder/dhmat}
+    \end{center} \vspace{-\baselineskip}
+    \hrulefill
+    
+    \textbf{Jacobi-Mat} \hfill \textit{lm$\backslash$jacobi(f1,f2,f3,$\alpha$,$\beta$,$\gamma$)}\hspace{3.8cm}
+    
+    \begin{center}
+    \includegraphics[width=0.6\linewidth]{./bilder/jacobi}
+    \end{center}   \vspace{-\baselineskip}
+    \hrulefill
+\end{minipage}
 %\begin{tabular}{p{5cm}p{10cm}}
 %
 %\texttt{$[ x_{11} , x_{12} ; x_{21},x_{22}]$} &  $ \begin{bmatrix}
@@ -48,15 +90,18 @@ Die Bibliothek findet sich im Repo:  \href{LMazzole/tinspire}{https://github.com
 %
 \begin{minipage}[t]{0.33\linewidth}
      \subsubsection{Distanz eines Vektors}
+     TR: \textit{norm($\vec{v}$)}\newline
     Distanz$\begin{bmatrix}
     x\\
     y\\
     z\\
     1
     \end{bmatrix}\rightarrow$ |d|=$\underbrace{\sqrt{x^2+y^2+z^2}}_{\texttt{Betrag des Vektors}}$
+    
 \end{minipage}
 \begin{minipage}[t]{0.33\linewidth}
     \subsubsection{Richtungsvektor \robos{31}}
+    TR: \textit{unitV($\vec{v}$)}\newline
     \[ e_u=\frac{\vec{u}}{|\vec{u}|} =
     \begin{bmatrix}
     \frac{u_x}{|u|}\\
@@ -66,6 +111,7 @@ Die Bibliothek findet sich im Repo:  \href{LMazzole/tinspire}{https://github.com
 \end{minipage}
 \begin{minipage}[t]{0.33\linewidth}
     \subsubsection{Skalarprodukt \robos{32}}
+    TR: \textit{dotP($\vec{a}$,$\vec{b}$)}\newline
     \[ \vec{a}\cdot \vec{b}= |\vec{a}|\cdot |\vec{b}| \cdot \cos(\varphi) = a_x \cdot b_x +  a_y \cdot b_y +  a_z \cdot b_z\]
     Parallel: $\vec{a}\cdot \vec{b} = a\cdot b$ \newline
     Orthogonal: $\vec{a}\cdot \vec{b} = 0$
@@ -265,10 +311,12 @@ ${}^k_o\mathrm{A}$ beschreibt wie der Basisvektor des Koord. Sys. $K_k$ gegenüb
     \textbf{Rotation} & ${}^A\mathrm{P} = {}^A_B\mathrm{R}\cdot {}^B\mathrm{P} $\\
     \textbf{Rotation + Translation}&$ {}^A\mathrm{P} = {}^A\mathrm{P}_{OB} +{}^A_B\mathrm{R}\cdot {}^B\mathrm{P} $\\
 \end{tabular}
-\clearpage
+
 
 
 \subsection{Konvention Arctan2 \robo{42}{2.1.8}}
+TR: \textit{lm$\backslash$arctan2(Y,X)}
+
 	\begin{minipage}{10cm}
     	$\theta=\arctan2(y,x)\Longrightarrow\left\{
     	\begin{array}{l}
@@ -318,7 +366,7 @@ ${}^k_o\mathrm{A}$ beschreibt wie der Basisvektor des Koord. Sys. $K_k$ gegenüb
     	\end{tabular}
     \end{minipage}
 
-Ti Nspire CX CAS: \texttt{$ lm\backslash arctan2(Y,X)$}
+
 \clearpage
 
 \subsection{Rücktransformation auf Winkel}

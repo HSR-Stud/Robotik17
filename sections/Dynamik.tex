@@ -28,12 +28,13 @@
     \textbf{Dynamische Gleichung} \newline Roboter mit n Achsen&
     $Q = M(q)\cdot \ddot{q} + V(q,\dot{q})+ G(q)  $ \newline
     $\tau \;= M(q) \cdot \ddot{q} + b(q,\dot{q}) \;+ z $&
-    \small{
+    \multirow{2}{7.5cm}{\small{ 
         Q: verallgemeinerte Kräfte (n\texttimes 1)\newline
         M: konfigurationsabhängige Massenmatrix (n\texttimes n)\newline
         V: Vektor nichtlinearer Term, der durch die Zentripetal- und die Coriolis-Beschleunigung entsteht (n\texttimes 1)\newline
         G: Vektor, der die Gravitationsterme enthält (n \texttimes 1)
-    }\\
+    }}\\
+    \textbf{1 DOF Manipulator}& $ \tau = ml^2\cdot \ddot{q}+mgl \cdot \cos(q) + c \cdot sgn(\dot{q} + v \cdot \dot{q}) $&\\
     \textbf{Bewegungsgelichung}\newline
     \robo{144}{6.2.6}&
     $\ddot{q}=M^{-1}(q)[\tau -b(q,\dot{q})]$&

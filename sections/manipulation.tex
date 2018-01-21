@@ -58,21 +58,55 @@
 \begin{minipage}{0.5\linewidth}  
     \subsubsection{Halteprinzipien}
     \includegraphics[width=\linewidth]{./bilder/HalteprinzGreif}
-\end{minipage}}
-\begin{minipage}[t]{0.5\linewidth}
+\end{minipage}}\hspace{0.09\linewidth}
+\begin{minipage}[t]{0.4\linewidth}
     \subsubsection{Gliederung nach Wirkprinzip}
-    \begin{tabular}{p{0.4\linewidth} p{0.6\linewidth}}
-        \textbf{Mechanischer Greifer}&
-            Zangen-, Klemm-, Gelenkfingerger-, Verhakenden Greifer (Klettgreifer, Nadelgreifer)\\
-        \textbf{Pneumatische Greifer}&
-            Überdruckgreifer: Loch-, Zypfen, Schrumpfring-,Luftstrahl-,Membrangreifer\\
-        \textbf{Pneumostatische Pneumodynamische}&
-            Unterdruckgreifer: Vakuumsauger,Haftsauger,Luftstromgreifer\\
-        \textbf{Elektrische Greifer}&
-            Magnetgreifer, Elektrostatische Greifer\\
-        \textbf{Adhäsove Greifer}&
-            Kapillar-, Gefrier-, Klebstoffgreifer\\
-    \end{tabular}
+        \textbf{Mechanischer Greifer}
+        \begin{itemize}
+            \item Zangengreifer
+            \item Klemmgreifer
+            \item Gelenkgreifer
+            \item Verhakende Greifer
+            \begin{itemize}
+                \item Klettgreifer
+                \item Nadelgreifer
+            \end{itemize}
+        \end{itemize}
+
+        \textbf{Pneumatische Greifer}
+        \begin{itemize}
+            \item Überdruckgreifer
+            \begin{itemize}
+                \item Lochgreifer
+                \item Zypfengreifer
+                \item Schrumpfringgreifer
+                \item Luftstrahlgreider
+                \item Membrangreider
+            \end{itemize}
+        \end{itemize}
+
+        \textbf{Pneumostatische Pneumodynamische}
+        \begin{itemize}
+            \item Unterdruckgreifer
+            \begin{itemize}
+                \item Vakuumsauger
+                \item Haftsauger
+                \item Luftstromgreifer
+            \end{itemize}
+        \end{itemize}
+
+        \textbf{Elektrische Greifer}
+        \begin{itemize}
+            \item Magnetgreifer
+            \item Elektrostatische Greifer
+        \end{itemize}
+           
+        \textbf{Adhäsove Greifer}
+        \begin{itemize}
+            \item Kapilargreifer
+            \item Gefriefgreifer
+            \item Klebstoffgreifer
+        \end{itemize}
 \end{minipage}
 \clearpage
 
@@ -136,8 +170,11 @@
             \item[] Haltrekraft mal Sicherheitsfaktor 2
         \end{itemize}
     \end{itemize}
+
+\includegraphics[width=\linewidth]{./bilder/GreiferAuswahl}
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
+    \vspace{-2cm}
     \subsection{Mechanische Greifer}
         \begin{itemize}
             \item Einfinger-, Zweifinger- oder Mehrfinger Ausführung
@@ -145,15 +182,18 @@
             \item Antrieb erfolgt mechanisch, pneumatisch oder elektrisch
         \end{itemize}
     \begin{center}
-        \includegraphics[width=0.3\linewidth]{./bilder/GreiferAusfurung}
+     \textbf{Greifkraft beim Abheben}\hfill\null
+    \[ \qquad F_G=\frac{m \cdot (g + a) \cdot S}{\mu \cdot n} \]
+    \textbf{Greifkraft beim Querhub}\hfill\null
+    \[ \qquad F_G=\frac{m \cdot g \cdot S}{\mu \cdot n} + m \cdot a \]
     \end{center}
-    \begin{minipage}{0.49\linewidth}
-        \textbf{Greifkraft beim Abheben}\newline
-        \null\qquad$F_G=\frac{m \cdot (g + a)}{\mu \cdot a} $\newline
-        \textbf{Greifkraft beim Querhub}\newline
-         \null\qquad$F_G=\frac{m \cdot g \dot S}{\mu \cdot n} + m \cdot a $
+
+        Max. Greifkraft bei NOT-AUS nötig.
+        
+    \begin{minipage}{0.3\linewidth}
+    \includegraphics[width=\linewidth]{./bilder/GreiferAusfurung}
     \end{minipage}
-    \begin{minipage}{0.5\linewidth}
+    \begin{minipage}{0.7\linewidth}
     $n$: Anz. Greifbacken\newline
     $\mu$: Reibkoeff. Greifer zu WS\newline
     $m$: Masse des WS [kg]\newline
@@ -163,11 +203,21 @@
     \end{minipage}
 \end{minipage}
 
-\begin{minipage}{0.7\linewidth}
-    \subsubsection{Auswahl}
-     \includegraphics[width=\linewidth]{./bilder/GreiferAuswahl}
+\begin{minipage}{0.5\linewidth}
+    Kräftesituation bei bewegtem Greifer:
+    \begin{enumerate}[label=\alph*)]
+        \item Ruhezustand
+        \item Aufwärtsbewegung
+        \item Abwärtsbewegung
+        \item Querbewegung
+        \item Schrägfahrt aufwärts
+    \end{enumerate}
 \end{minipage}
-\clearpage
+\begin{minipage}{0.5\linewidth}
+    \vspace{-2cm}
+    \includegraphics[width=\linewidth]{./bilder/GreiferKraft}
+\end{minipage}
+
 
 \subsection{Sensorik}
 \begin{minipage}{0.5\linewidth}
@@ -195,13 +245,13 @@
  
  \subsubsection{Kamerasysteme}
  \begin{tabular}{p{5cm}p{6cm}p{6cm}}
-    \textbf{Stationäre Kammera}\newline
+    \textbf{Stationäre Kamera}\newline
     Transformation vom Kamera-KS ins Basis-KS&
     \begin{itemize}
         \item[+] Ist keine Last für den Roboter
     \end{itemize}
     &
-        \begin{itemize}
+    \begin{itemize}
         \item[-] Messgenauigkeit begrenzt, da die Kamera relativ weit weg vom Objekt ist.
         \item[-] Roboter evt. im Blickfeld
         \item[-] Vermessung des Kamerasichtfeldes
@@ -220,4 +270,10 @@
     \end{itemize}\\
  \end{tabular}
 
- \includegraphics[width=0.7\linewidth]{./bilder/GreiferProject}
+        \textbf{Kalibrierung:}\newline
+        Das Bildverarbeitungssystem liefert die Werkstückdaten bezgl. des Kamerakoordsys. Für die Umrechnung muss eine Vermessung des Kamerasichtsfelds im Arbeitsraum erfolgen. 
+        Dies kann bsp. mit zwei kreisförmigen Scheiben erfolgen deren Position im Basis-Koordsys. bekannt sind und danacha im Kamera-Koordsys. ermittelt werden. So kann die TF ermittelt werden.
+        Ist die Kammera am Werkzeug montiert soll die TF zwischen Kamera-Koordsys. und Werkzeugkoordsys. erfolgen.
+        \clearpage
+        
+ \includegraphics[width=\linewidth]{./bilder/GreiferProject}
