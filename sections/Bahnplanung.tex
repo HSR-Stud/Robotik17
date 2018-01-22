@@ -66,18 +66,34 @@ Vorteile:
 \end{multicols}
 \clearpage
 \subsubsection{Kubisches Polynom}
+\begin{minipage}{0.5\linewidth}
 \begin{tabular}{ll}
 \multicolumn{2}{l}{\textbf{Bedingungen}}\\
 $ \theta(0)=\theta_0 $& $ \theta(t_f) = \theta_f$\\ 
 $ \dot{\theta}(0)=0 $& $ \dot{\theta}(t_f) = 0$\\
 \multicolumn{2}{l}{\textbf{Gleichung}}\\
 \multicolumn{2}{l}{$ \theta(t)=a_0 + a_1t + a_2t^2+a_3t^3$}\\
+\multicolumn{2}{l}{$ \dot{\theta}(t)=a_1 + 2\cdot a_2t+3\cdot a_3t^2$}\\
+\multicolumn{2}{l}{$ \ddot{\theta}(t)=2\cdot a_2+6\cdot a_3t$}\\
 \multicolumn{2}{l}{\textbf{Koeffizienten}}\\
 $a_0= \theta_0$&$a_1=0 $\\
 $a_2 = \frac{3}{t_f^2}(\theta_f - \theta_0) $&$a_3=-\frac{2}{t_f^3}(\theta_f-\theta_0) $\\
 \end{tabular}
-\paragraph{Bsp.}
-Ein Roboter mit einer Rotationsachse ($\theta$) soll sich von $\theta$= -5\textdegree bis zu $\theta$= 80\textdegree in 4 Sekunden bewegen.\newline
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+    $\theta_0$ = Startposition/-auslenkung\newline
+    $\theta_f$ = Endposition/-auslenkung\newline
+    $\dot{\theta}_0$ = Startgeschwindigkeit\newline
+    $\dot{\theta}_f$ = Endgeschwindigkeit\newline
+    $t_f=t_e$ = Dauer der Bewegung
+    \\
+    \\
+    $v_{max} \rightarrow \ddot{\theta} = 0$\newline
+    $\qquad t_{v_{max}} = \frac{-a_2}{3\cdot a_3} = \frac{t_f}{2}$
+    
+\end{minipage}
+\paragraph{Bsp:}
+Ein Roboter mit \textbf{einer} Rotationsachse ($\theta$) soll sich von $\theta$= -5\textdegree bis zu $\theta$= 80\textdegree in 4 Sekunden bewegen.\newline
 Gesucht: Koeff des kubischen Polynoms, max Geschwindigkeit und max Beschleunigung der Achsen.
 Stellen sie die Position Grafisch dar.
 

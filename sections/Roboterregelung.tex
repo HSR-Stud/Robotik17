@@ -1,6 +1,8 @@
 \section{Roboterregelung \robo{155}{7}}
-\textbf{Regelung Infofluss}\newline
-\includegraphics[width=\linewidth]{./bilder/RegelungInfofluss}
+\textbf{Regelung Infofluss}
+\begin{center}
+    \includegraphics[width=0.9\linewidth]{./bilder/RegelungInfofluss}
+\end{center}
 
 \begin{minipage}[t]{0.5\linewidth}
     \textbf{Regelung}
@@ -49,15 +51,16 @@
     \includegraphics[width=\linewidth]{./bilder/InternExternRegelung}
 \end{minipage}
 
-%\begin{minipage}{0.5\linewidth}
+\begin{minipage}{0.5\linewidth}
     \subsection{Lageregelung auf Gelenkebene (intern)}
-    \begin{multicols}{2}
         \begin{itemize}
             \item[+] Einfache Implementierung
             \item[-] Ungenauigkeit der kart. Pos. TCP
         \end{itemize}
-    \end{multicols}
-%\end{minipage}    
+\end{minipage}    
+\begin{minipage}{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./bilder/LageregelungGelenk}
+\end{minipage}    
 \begin{minipage}{0.5\linewidth}
     \subsection{Kartesische Lageregelung (extern)}
     Braucht ein stationäres kartesisches Koord. Sys. (bsp. Kamera) zur erfassung der Position/Orientierung des Effektors. \textbf{X} ist dabei die Orientierung (Vektor des Eulerwinkels) und die Position (Ortsvektor).
@@ -104,8 +107,13 @@
 %    G = Vektor mit Gravitationsterme
 %\end{minipage}
 \begin{minipage}{0.5\linewidth}
+    \subsection{Modellbasierte \robo{182}{7.4}}
     \subsection{Vorsteuerung \robo{182}{7.4.1}}
-    Durch die Vorsteuerung wird der Wert der Stellgrösse so vorgegeben, dass die Regelgrösser der Sollgrösse gut folgt. Die Regelung dient nur noch dazu, die Fehler durch ungenaue Vorsteuerung oder Störungen auszugleichen.
+    Durch die Vorsteuerung wird der Wert der Stellgrösse so vorgegeben, dass die Regelgrösser der Sollgrösse gut folgt. Die Regelung dient nur noch dazu, die Fehler durch ungenaue Vorsteuerung oder Störungen auszugleichen.\newline
+    {\small
+    + Bessere Dynamik, Regler entlastet, schneller zum Sollwert\newline
+    - Hohe Rechenleistung, genaues Modell}
+\vspace{-2\baselineskip}
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
     \includegraphics[width=\linewidth]{./bilder/Vorsteuerung}

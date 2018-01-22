@@ -285,35 +285,111 @@ Der Winkel ist Positiv bei einer Rotation im Gegenuhrzeigersinn $ \circlearrowle
                 		0 &0 &1
                 	 \end{bmatrix}$
     \end{minipage}
+\vspace{\baselineskip}
+
+\begin{minipage}{0.49\linewidth}
 \subsection{Aufeinanderfolgende Rotationen}
-3 Koordinatensysteme \{A\}, \{B\}, \{C\} mit gleichem Ursprung\\
+3 Koordinatensysteme \{A\}, \{B\}, \{C\} mit gleichem Ursprung.\\
 ${}^k_o\mathrm{A}$ beschreibt wie der Basisvektor des Koord. Sys. $K_k$ gegenüber $K_o$ gedreht wird.\newline
-\begin{minipage}{6cm}
-    \textbf{Körperfestkoordinatensystem}\\
+\begin{minipage}{0.49\linewidth}
+    \textbf{Körperfestkoord.sys.}\\
     "`An der Achse"'\\
     ${}^B\mathrm{p}={}^B_C\mathrm{R}\cdot{}^C\mathrm{p}$\\
     ${}^A\mathrm{p}={}^A_B\mathrm{R}\cdot{}^B\mathrm{p}$\\
     ${}^A\mathrm{p}={}^A_C\mathrm{R}\cdot{}^C\mathrm{p}$\\ \\
     ${}^A_C\mathrm{R}=\overrightarrow{{}^A_B\mathrm{R} \cdot {}^B_C\mathrm{R}}$\\
 \end{minipage}
-\begin{minipage}{6cm}
-    \textbf{Raumfestkoordinatensystem}\\ 
+\begin{minipage}{0.49\linewidth}
+    \textbf{Raumfestkoord.sys.}\\ 
     "`An der Welt oder Basis"'\\
     ${}^B\mathrm{p}={}^B_A\mathrm{R}{}^B_C\mathrm{R}{}^A_C\mathrm{R}\cdot{}^C\mathrm{p}$\\
     ${}^A\mathrm{p}={}^A_B\mathrm{R}\cdot{}^B\mathrm{p}$\\
     ${}^A\mathrm{p}={}^A_C\mathrm{R}\cdot{}^C\mathrm{p}$\\ \\
     ${}^A_C\mathrm{R}=\overleftarrow{{}^B_C\mathrm{R} \cdot {}^A_B\mathrm{R}}$\\
 \end{minipage}   
-
+\end{minipage}\quad
+\begin{minipage}{0.5\linewidth}
 \subsubsection{Punkte in verschiedenen Koordinatensystemen \robo{36}{2.1.6}}
 \begin{tabular}{ll}
     \textbf{Translation}&${}^A\mathrm{P} = {}^A\mathrm{P}_{OB}+{}^B\mathrm{P} $ \\
     \textbf{Rotation} & ${}^A\mathrm{P} = {}^A_B\mathrm{R}\cdot {}^B\mathrm{P} $\\
     \textbf{Rotation + Translation}&$ {}^A\mathrm{P} = {}^A\mathrm{P}_{OB} +{}^A_B\mathrm{R}\cdot {}^B\mathrm{P} $\\
+    &\\
+    \textbf{Inverse}&${}^B_A\mathrm{T}=({}^A_B\mathrm{T})^{-1}$\\
+    &${}^B\mathrm{P}={}^B_A\mathrm{T}\cdot{}^A\mathrm{P}$ \\
+    &${}^A\mathrm{P}={}^A_B\mathrm{T}\cdot{}^B\mathrm{P}=({}^B_A\mathrm{T})^{-1}\cdot{}^B\mathrm{P}$
 \end{tabular}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+ \subsubsection{Multiplikation \robo{36}{2.1.6}}
+ \vspace{\baselineskip}
+Transformations Matrix über mehrere Koordinatensysteme: \textbf{Achtung Körperfest oder Raumfest}\\
 
+${}^A_B\mathrm{T} \Rightarrow$
+Transformationsmatrix von \newline
+\qquad Koordinatensystem A nach B\newline
 
+${}^0_n\mathrm{T}={}^0_1\mathrm{T}\cdot{}^1_2\mathrm{T}\cdot{}$\ldots$\cdot{}^{n-1}_n\mathrm{T}$
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+     \subsection{Transformations Matrix}
+    \subsubsection{Aufbau}
+    Transformationsmatrix: T = $ 
+    \begin{bmatrix} 
+    r_{11} & r_{12} & r_{13} & x_{ab} \\
+    r_{21} & r_{22} & r_{23} & y_{ab} \\
+    r_{21} & r_{22} & r_{23} & z_{ab} \\
+    0 & 0 & 0 & x                              
+    \end{bmatrix}$
+    
+    x = 1 bei Ortsvektor \hspace{1cm} x = 0 bei Feiem Vektor
+    
+\end{minipage}
 
+\vspace{\baselineskip}
+{\footnotesize
+\begin{minipage}{0.25\linewidth}
+    \textbf{Translation}\newline
+    $Trans(a,b,c)=\begin{bmatrix}
+    1 & 0 & 0 & a \\ 
+    0 & 1 & 0 & b \\ 
+    0 & 0 & 1 & c \\ 
+    0 & 0 & 0 &  1
+    \end{bmatrix}$
+\end{minipage}
+\begin{minipage}{0.25\linewidth}
+    \textbf{Rot. um x-Achse mit Winkel $ \gamma$}\newline
+    $ Rot_x(\gamma)=$\newline
+    $\begin{bmatrix}
+    1 & 0 & 0 & 0 \\ 
+    0 & cos(\gamma) & -sin(\gamma) & 0 \\ 
+    0 & sin(\gamma) & cos(\gamma) & 0 \\ 
+    0 & 0 & 0 & 1
+    \end{bmatrix}$
+\end{minipage}    
+\begin{minipage}{0.25\linewidth}
+    \textbf{Rot. um y-Achse mit Winkel $ \beta$}\newline
+    $ Rot_y(\beta)=$\newline
+    $\begin{bmatrix}
+    cos(\beta)& 0  & sin(\beta)  & 0  \\ 
+    0 & 1 & 0 & 0  \\ 
+    -sin(\beta)&  0 & cos(\beta) & 0 \\ 
+    0 & 0 & 0  & 1
+    \end{bmatrix}$
+\end{minipage}
+\begin{minipage}{0.25\linewidth}
+    \textbf{Rot. um z-Achse mit Winkel $\alpha$}\newline
+    $Rot_z(\alpha)=$\newline
+    $\begin{bmatrix}
+    cos(\alpha)& -sin(\alpha) & 0 & 0 \\ 
+    sin(\alpha)&  cos(\alpha)& 0 & 0 \\ 
+    0 & 0 & 1 & 0 \\ 
+    0 & 0 & 0 & 1
+    \end{bmatrix} $
+\end{minipage} 
+}
+
+\enlargethispage{1cm}
 \subsection{Konvention Arctan2 \robo{42}{2.1.8}}
 TR: \textit{lm$\backslash$arctan2(Y,X)}
 
@@ -507,67 +583,5 @@ $\beta=-\frac{\pi}{2}$:
 \clearpage
 
 
- \subsection{Transformations Matrix}
- \subsubsection{Aufbau}
- \begin{minipage}{10cm}
-     Transformationsmatrix: T = $ 
-     \begin{bmatrix} 
-     r_{11} & r_{12} & r_{13} & x_{ab} \\
-     r_{21} & r_{22} & r_{23} & y_{ab} \\
-     r_{21} & r_{22} & r_{23} & z_{ab} \\
-     0 & 0 & 0 & x                              
-     \end{bmatrix}$
-     
-     x = 1 bei Ortsvektor \hspace{1cm} x = 0 bei Feiem Vektor
-     
- \end{minipage}
- \begin{minipage}{0.33\linewidth}
-     \textbf{Translation}\newline
-     $Trans(a,b,c)=\begin{bmatrix}
-     1 & 0 & 0 & a \\ 
-     0 & 1 & 0 & b \\ 
-     0 & 0 & 1 & c \\ 
-     0 & 0 & 0 &  1
-     \end{bmatrix}$
- \end{minipage}
- 
- 
- \begin{minipage}{0.33\linewidth}
-     \textbf{Rotation um x-Achse mit Winkel $ \gamma$}\newline
-     $ Rot_x(\gamma)=\begin{bmatrix}
-     1 & 0 & 0 & 0 \\ 
-     0 & cos(\gamma) & -sin(\gamma) & 0 \\ 
-     0 & sin(\gamma) & cos(\gamma) & 0 \\ 
-     0 & 0 & 0 & 1
-     \end{bmatrix}$
- \end{minipage}    
- \begin{minipage}{0.33\linewidth}
-     \textbf{Rotation um y-Achse mit Winkel $ \beta$}\newline
-     $ Rot_y(\beta)=\begin{bmatrix}
-     cos(\beta)& 0  & sin(\beta)  & 0  \\ 
-     0 & 1 & 0 & 0  \\ 
-     -sin(\beta)&  0 & cos(\beta) & 0 \\ 
-     0 & 0 & 0  & 1
-     \end{bmatrix}$
- \end{minipage}
- \begin{minipage}{0.33\linewidth}
-     \textbf{Rotation um z-Achse mit Winkel $\alpha$}\newline
-     $Rot_z(\alpha)=\begin{bmatrix}
-     cos(\alpha)& -sin(\alpha) & 0 & 0 \\ 
-     sin(\alpha)&  cos(\alpha)& 0 & 0 \\ 
-     0 & 0 & 1 & 0 \\ 
-     0 & 0 & 0 & 1
-     \end{bmatrix} $
- \end{minipage} 
- 
- \subsubsection{Multiplikation \robo{36}{2.1.6}}
- Transformations Matrix über mehrere Koordinatensysteme:\\
- 
- ${}^0_n\mathrm{T}={}^0_1\mathrm{T}\cdot{}^1_2\mathrm{T}\cdot{}$\ldots$\cdot{}^{n-1}_n\mathrm{T}$;
- \space\space\space\space ${}^A_B\mathrm{T} \Rightarrow$
- Transformationsmatrix von Koordinatensystem A nach B
- 
- \subsubsection{Punkte in verschiedenen Koordinatensystemen \robo{36}{2.1.6}}
- ${}^B\mathrm{P}={}^B_A\mathrm{T}\cdot{}^A\mathrm{P}$ \\ \\
- ${}^A\mathrm{P}={}^A_B\mathrm{T}\cdot{}^B\mathrm{P}=({}^B_A\mathrm{T})^{-1}\cdot{}^B\mathrm{P}$
+
  
