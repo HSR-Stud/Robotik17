@@ -139,13 +139,13 @@ $ s_{12}=sin(\theta_{1} + \theta_{2}) $
     $ J = 
     \begin{bmatrix} 
     \frac{\partial{x_{e}}}{\partial{\theta_{1}}} & 
-    \frac{\partial{x_{e}}}{\partial{d_{2}}} & 
+    \frac{\partial{x_{e}}}{\partial{\theta_{2}}} & 
     \frac{\partial{x_{e}}}{\partial{\theta_{3}}} \\
     \frac{\partial{y_{e}}}{\partial{\theta_{1}}} & 
-    \frac{\partial{y_{e}}}{\partial{d_{2}}} & 
+    \frac{\partial{y_{e}}}{\partial{\theta_{2}}} & 
     \frac{\partial{y_{e}}}{\partial{\theta_{3}}} \\
     \frac{\partial{\Phi_{e}}}{\partial{\theta_{1}}} & 
-    \frac{\partial{\Phi_{e}}}{\partial{d_{2}}} & 
+    \frac{\partial{\Phi_{e}}}{\partial{\theta_{2}}} & 
     \frac{\partial{\Phi_{e}}}{\partial{\theta_{3}}} \\ 
     \end{bmatrix}
     =
@@ -212,17 +212,17 @@ In der Nähe von Singularitäten könnnen die Achsengeschwindigkeiten extrem ans
 \end{multicols}
 \subsection{Roboterstatik}
 Momente, welche an den Achsgelenken wirken:\newline
-$\tau_{n}=({}^0J_n)^T \cdot {}^0F_n$  \\
+$\tau_{n}=({}^0J_n)^\textbf{T} \cdot {}^0F_n$  \\
 Externe Momente / Kräfte, welche am n-ten Glied wirken:\newline
 ${}^0F_n = \begin{bmatrix} {}^0F_{x,n} & {}^0F_{y,n} & {}^0F_{z,n} & {}^0M_{x,n}
 & {}^0M_{y,n} & {}^0M_{z,n}
-\end{bmatrix}^{T} $ \newline
+\end{bmatrix}^{\textbf{T}} $ \newline
 \paragraph{Beispiel 4} Kräfte eines zweichasigen Planarroboter\newline
 Der Roboter soll mit dem globalen Kraftvektor ${}^0F$ gegen einen fixen Körper drücken.\newline
 \null\hspace{0.5cm}\begin{tabular}{ll}
     \textbf{Gegeben:}& Jacobi-Matrix\\
     \textbf{Gesucht:}& erforderliches Antriebsmoment $\tau_1$ und $\tau_2$\\
-    \textbf{Vorgehen:} & $\tau_{n}=({}^0J_n)^T \cdot {}^0F_n$  \\
+    \textbf{Vorgehen:} & $\tau_{n}=({}^0J_n)^\textbf{T} \cdot {}^0F_n$  \\
 \end{tabular}$\null \qquad\qquad
 \begin{bmatrix}
 \tau_{1} \\ \tau_{2} \\ \tau_{3}
