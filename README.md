@@ -8,7 +8,8 @@ Auf Grundlage der Zusammenfassung von Silvano Ferretti, Sven Arnold, Arjen Visse
 [HS17](https://github.com/LMazzole/RobotikHs17/releases/download/HS17/Rob.pdf)  
 
 ## Ti- Npire CX CAS
-Das Programm für den Ti Nspire CX CAS findet man im Repositiry [LMazzole/tinspire](https://github.com/LMazzole/tinspire).
+Das Programm für den Ti Nspire CX CAS findet man im Repositiry [LMazzole/tinspire](https://github.com/LMazzole/tinspire).  
+Eine umfangreichere Variante kann im Repository [MeierTobias/ti-nspire-lib](https://github.com/MeierTobias/ti-nspire-lib) heruntergeladen werden. (Library RobFunc)
 
 ## Plan und Lerninhalte
     - Einführung in die Funktion, Arbeitsweise und Programmierung von Robotern und Handlingssystemen
